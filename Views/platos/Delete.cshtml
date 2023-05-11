@@ -1,0 +1,66 @@
+﻿@model CRUDEntityFramework.Models.plato
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar</h2>
+<div class="jumbotron">
+    <h3 style="color: red">¿Está seguro de que desea eliminar este registro?</h3>
+</div>
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.categoria.categoria1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.categoria.categoria1)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.nombre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.nombre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.descripcion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.descripcion)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.precio)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.precio)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.imagen)
+        </dt>
+
+        <dd>
+            @*@Html.DisplayFor(model => model.imagen)*@
+            <img style="width: 70px;" src="@Html.DisplayFor(model => model.imagen)" />
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            @Html.ActionLink("Regresar", "Index", "", new { @class = "btn btn-default" }) |
+            <input type="submit" value="Delete" class="btn btn-danger" />
+        </div>
+    }
+</div>

@@ -1,0 +1,64 @@
+﻿@model CRUDEntityFramework.Models.plato
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <hr />
+    <div class="grid-container">
+        <div class="grid-item">
+            <dl class="dl-horizontal" >
+                <dt>
+                    @Html.DisplayNameFor(model => model.categoria.categoria1)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.categoria.categoria1)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.nombre)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.nombre)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.descripcion)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.descripcion)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.precio)
+                </dt>
+
+                <dd>
+                    @Html.DisplayFor(model => model.precio)
+                </dd>
+
+                <dt>
+                    @Html.DisplayNameFor(model => model.imagen)
+                </dt>
+
+                @*<dd>
+                    <img style="width: 70px;" src="@Html.DisplayFor(model => model.imagen)" />
+                </dd>*@
+
+            </dl>
+        </div>
+        <div class="grid-item" style="text-align: center;">
+            <img style="width: 140px;" src="@Html.DisplayFor(model => model.imagen)" />
+        </div>
+    </div>
+</div>
+<p>
+    @Html.ActionLink("Regresar", "Index", "", new { @class = "btn btn-default" }) |
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id }, new { @class = "btn btn-warning" })
+</p>

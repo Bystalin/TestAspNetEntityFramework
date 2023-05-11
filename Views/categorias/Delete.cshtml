@@ -1,0 +1,32 @@
+﻿@model CRUDEntityFramework.Models.categoria
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+<h2>Eliminar</h2>
+<div class="jumbotron">
+    <h3 style="color: red">¿Está seguro de que desea eliminar este registro?</h3>
+</div>
+    <div>
+        <hr />
+        <dl class="dl-horizontal">
+            <dt>
+                @Html.DisplayNameFor(model => model.categoria1)
+            </dt>
+
+            <dd>
+                @Html.DisplayFor(model => model.categoria1)
+            </dd>
+
+        </dl>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+            <div class="form-actions no-color">
+                @Html.ActionLink("Regresar", "Index", "", new { @class = "btn btn-default" }) |
+                <input type="submit" value="Delete" class="btn btn-danger" />
+            </div>
+        }
+    </div>

@@ -1,0 +1,36 @@
+﻿@model IEnumerable<CRUDEntityFramework.Models.categoria>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de categorias</h2>
+
+<p>
+    @Html.ActionLink("Nueva categoria", "Create", "", new { @class = "btn btn-success" })
+</p>
+<div class="table-responsive">
+    <table class="table table-striped ">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.categoria1)
+            </th>
+            <th>Acciones</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.categoria1)
+                </td>
+                <td>
+                    @Html.ActionLink(" ", "Edit", new { id = item.id }, new { @class = "btn btn-warning glyphicon glyphicon-edit" }) |
+                    @Html.ActionLink(" ", "Details", new { id = item.id }, new { @class = "btn btn-primary glyphicon glyphicon-search" }) |
+                    @Html.ActionLink(" ", "Delete", new { id = item.id }, new { @class = "btn btn-danger glyphicon glyphicon-trash" })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>

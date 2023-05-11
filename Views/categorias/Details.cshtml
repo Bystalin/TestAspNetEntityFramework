@@ -1,0 +1,25 @@
+﻿@model CRUDEntityFramework.Models.categoria
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Detalles</h2>
+
+<div>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.categoria1)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.categoria1)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Regresar", "Index", "", new { @class = "btn btn-default" }) |
+    @Html.ActionLink("Editar", "Edit", new { id = Model.id }, new { @class = "btn btn-warning" })
+</p>
